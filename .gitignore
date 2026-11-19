@@ -1,0 +1,61 @@
+### Java ###
+*.class
+*.log
+*.ctxt
+.mtj.tmp/
+hs_err_pid*
+replay_pid*
+
+### Build Tools ###
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+# Ensure Maven Wrapper jar is NOT ignored if your project uses it
+!/.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### IDEs ###
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+.factorypath
+bin/
+
+# Visual Studio Code
+.vscode/
+
+### Environment / Sensitive Data ###
+.env
+.env.local
+**/config/application-*.properties
+**/config/application-*.yml
+# Un-comment below if you use local profiles and want to prevent pushing credentials
+# application-dev.properties
+# application-local.properties
+
+### System Files ###
+.DS_Store
+Thumbs.db
+ehthumbs.db
