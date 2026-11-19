@@ -6,11 +6,14 @@ import org.springframework.web.client.RestClient;
 
 import java.util.Optional;
 
-/** Llama a la Cloud Run function "pokemon-of-the-day". Si no está configurada o falla, devuelve vacío. */
+/**
+ * Llama a la Cloud Run function "pokemon-of-the-day". Si no está configurada o falla, devuelve vacío.
+ */
 @Component
 public class DailyPickClient {
 
-    record DailyPick(int id, String date) { }
+    record DailyPick(int id, String date) {
+    }
 
     private final RestClient http;
     private final String functionUrl;
