@@ -39,7 +39,8 @@ else
     sleep 2
   done
 fi
-for ROLE in roles/run.admin roles/artifactregistry.writer roles/iam.serviceAccountUser; do
+for ROLE in roles/run.admin roles/artifactregistry.writer roles/iam.serviceAccountUser \
+            roles/cloudbuild.builds.editor roles/storage.admin roles/serviceusage.serviceUsageConsumer; do
   for i in 1 2 3 4 5; do
     gcloud projects add-iam-policy-binding "$PROJECT_ID" \
       --member="serviceAccount:${SA_EMAIL}" --role="$ROLE" --condition=None >/dev/null && break
