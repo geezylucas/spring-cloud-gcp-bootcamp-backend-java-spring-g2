@@ -28,6 +28,13 @@ gcloud artifacts repositories describe "$REPOSITORY" --location="$REGION" >/dev/
        --repository-format=docker --location="$REGION" \
        --description="Imágenes del hands-on M10"
 
+# "gcloud run deploy --source" guarda sus imágenes en este repositorio. Lo creamos ya,
+# así la service account solo necesita artifactregistry.writer (no permiso para crear repos).
+gcloud artifacts repositories describe cloud-run-source-deploy --location="$REGION" >/dev/null 2>&1 \
+  || gcloud artifacts repositories create cloud-run-source-deploy \
+       --repository-format=docker --location="$REGION" \
+       --description="Imágenes de gcloud run deploy --source"
+
 echo "▶ 3/5 Service account que desplegará desde GitHub"
 if gcloud iam service-accounts describe "$SA_EMAIL" >/dev/null 2>&1; then
   echo "   (ya existe)"
