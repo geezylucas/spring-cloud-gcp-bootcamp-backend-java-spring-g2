@@ -118,7 +118,6 @@ y Cloud Build tienen precios aparte**. Verifica los valores vigentes en la pági
 - Añade `Cloud SQL` o `Secret Manager` y lee un secreto como variable de entorno.
 - Protege la función con IAM (quita `--allow-unauthenticated`) y llama con un token de identidad.
 - Agrega un *circuit breaker* (Spring Cloud Circuit Breaker + Resilience4j) a `DailyPickClient`.
-- Despliega la función con el mismo workflow (`gcloud run deploy --source … --function …`).
 
 ## Solución de problemas: `setup-gcp.sh`
 
